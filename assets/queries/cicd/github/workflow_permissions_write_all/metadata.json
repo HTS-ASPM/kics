@@ -1,0 +1,13 @@
+{
+  "id": "9044efc1-3438-4504-8a9a-663e6b8cf28e",
+  "queryName": "Workflow Grants Write-All Permissions To GITHUB_TOKEN",
+  "severity": "MEDIUM",
+  "category": "Access Control",
+  "descriptionText": "'permissions: write-all' gives the workflow's GITHUB_TOKEN write access to every scope (contents, packages, pull requests, actions, ...). Any compromised step or third-party action in the workflow can then push code, publish packages or change releases. Grant only the scopes each job needs.",
+  "descriptionUrl": "https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token",
+  "platform": "CICD",
+  "descriptionID": "ec34227d",
+  "cloudProvider": "common",
+  "cwe": "250",
+  "riskScore": "5.8"
+}

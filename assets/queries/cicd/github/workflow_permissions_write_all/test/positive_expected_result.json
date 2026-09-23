@@ -1,0 +1,14 @@
+[
+  {
+    "queryName": "Workflow Grants Write-All Permissions To GITHUB_TOKEN",
+    "severity": "MEDIUM",
+    "line": 5,
+    "fileName": "positive1.yaml"
+  },
+  {
+    "queryName": "Workflow Grants Write-All Permissions To GITHUB_TOKEN",
+    "severity": "MEDIUM",
+    "line": 8,
+    "fileName": "positive2.yaml"
+  }
+]

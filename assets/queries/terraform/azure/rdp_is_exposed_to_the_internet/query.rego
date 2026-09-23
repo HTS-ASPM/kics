@@ -24,7 +24,7 @@ CxPolicy[result] {
 
 CxPolicy[result] {
   group := input.document[i].resource.azurerm_network_security_group[groupName]
-  rule := group.security_rule[idx]
+  rule := security_rules(group)[idx]
 
   upper(rule.access) == "ALLOW"
   upper(rule.direction) == "INBOUND"
@@ -88,4 +88,15 @@ else = allow {
 else = allow {
 	prefix == "any"
 	allow = true
+}
+
+# HCL gives a list for several inline security_rule blocks but a single object for one.
+# Indexing the object walked its attributes instead of the rule, so an NSG whose only
+# inline rule opened this port to the internet was never reported.
+security_rules(group) = rules {
+	is_array(group.security_rule)
+	rules := group.security_rule
+} else = rules {
+	is_object(group.security_rule)
+	rules := [group.security_rule]
 }

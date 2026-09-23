@@ -1,0 +1,13 @@
+{
+  "id": "fd08580c-946b-4e15-970d-52f15942b094",
+  "queryName": "IAM Policy Allows All Actions Except Listed (NotAction With Allow)",
+  "severity": "HIGH",
+  "category": "Access Control",
+  "descriptionText": "An IAM policy statement with 'Effect: Allow', 'NotAction' and 'Resource: *' grants every action in every AWS service except the ones listed, including actions added to AWS later. It is effectively administrator access. Use 'Action' with an explicit list instead.",
+  "descriptionUrl": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html",
+  "platform": "Terraform",
+  "descriptionID": "7ed61c86",
+  "cloudProvider": "aws",
+  "cwe": "269",
+  "riskScore": "8.0"
+}
